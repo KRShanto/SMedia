@@ -1,0 +1,36 @@
+{
+  "name": "smedia",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next-auth/mongodb-adapter": "^1.1.1",
+    "generate-password": "^1.7.0",
+    "moment": "^2.29.4",
+    "mongoose": "^6.8.4",
+    "next": "13.0.7",
+    "next-auth": "^4.18.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-icons": "^4.8.0",
+    "react-spinners": "^0.13.7",
+    "react-top-loading-bar": "^2.3.1",
+    "sass": "^1.57.0",
+    "shortid": "^2.2.16",
+    "socket.io": "^4.5.4",
+    "socket.io-client": "^4.5.4",
+    "swr": "^2.0.1",
+    "zustand": "^4.3.7"
+  },
+  "devDependencies": {
+    "@types/react": "18.0.35",
+    "eslint": "^8.38.0",
+    "typescript": "5.0.4"
+  }
+}
