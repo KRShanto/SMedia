@@ -1,3 +1,3 @@
-# SMedia
+# Sedia
 
-SMedia is a simple social media app built with Next.js and MongoDB.
+Sedia is a simple social media app built with Next.js and MongoDB.
