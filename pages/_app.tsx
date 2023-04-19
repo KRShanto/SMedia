@@ -9,6 +9,7 @@ import Navbar from "@/components/Navbar";
 import LoadingBar from "react-top-loading-bar";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { SessionProvider } from "next-auth/react";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [progress, setProgress] = useState(0);
@@ -38,27 +39,29 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <LoadingBar
-        color="rgb(0, 255, 208)"
-        height={3}
-        progress={progress}
-        onLoaderFinished={() => setProgress(0)}
-      />
+      <SessionProvider session={pageProps.session}>
+        <LoadingBar
+          color="rgb(0, 255, 208)"
+          height={3}
+          progress={progress}
+          onLoaderFinished={() => setProgress(0)}
+        />
 
-      {loading && (
-        <div className="preloader gloabl-preloader">
-          <FadeLoader className="spinner" color="cyan" loading={loading} />
-        </div>
-      )}
+        {loading && (
+          <div className="preloader gloabl-preloader">
+            <FadeLoader className="spinner" color="cyan" loading={loading} />
+          </div>
+        )}
 
-      <>
-        {popup && <PopupState />}
-        <main style={{ opacity: loading || popup ? 0.2 : 1 }}>
-          <Navbar />
+        <>
+          {popup && <PopupState />}
+          <main style={{ opacity: loading || popup ? 0.2 : 1 }}>
+            <Navbar />
 
-          <Component {...pageProps} />
-        </main>
-      </>
+            <Component {...pageProps} />
+          </main>
+        </>
+      </SessionProvider>
     </>
   );
 }
